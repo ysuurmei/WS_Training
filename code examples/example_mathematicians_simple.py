@@ -18,7 +18,7 @@ def get_names():
     url = 'http://www.fabpedigree.com/james/mathmen.htm'
     response = closing(get(url, stream=True))
 
-    html = BeautifulSoup(response, 'html.parser')
+    html = BeautifulSoup(response.thing.text, 'html.parser')
     names = set()
     
     for li in html.select('li'):
